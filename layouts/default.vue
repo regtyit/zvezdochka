@@ -3,13 +3,15 @@
 </script>
 
 <template>
-  <AppHeader></AppHeader>
-  <v-layout>
+
+  <v-layout class="flex-column" >
+    <AppBar />
     <v-main>
-    <NuxtPage />
-  </v-main>
-</v-layout>
-<AppFooter></AppFooter>
+      <NuxtPage />
+    </v-main>
+    <Footer />
+  </v-layout>
+
 </template>
 
 <style scoped></style>

@@ -23,7 +23,7 @@ export default defineNuxtPlugin((app) => {
           xs: 0,
           sm: 340,
           md: 600,
-          lg: 800,
+          lg: 960,
           xl: 1280,
         },
       },
