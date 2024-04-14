@@ -1,5 +1,5 @@
 <template>
-    <v-app-bar elevation="0" color="#faebd7" scroll-behavior="hide" scroll-threshold="20">
+    <v-app-bar elevation="0" color="#faebd7" >
         <v-container>
             <v-row>
                 <v-col>
