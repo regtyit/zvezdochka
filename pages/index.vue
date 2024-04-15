@@ -1,6 +1,5 @@
 <script setup>
 import { useDisplay } from 'vuetify'
-
 const { md } = useDisplay()
 
 </script>
@@ -20,7 +19,7 @@ const { md } = useDisplay()
         <div class="tile">
           <h2 class="text-center"> Про Звёздочку</h2>
           <div class="sub-menu">
-            <p>Описание, условия, фотографии</p>
+            <p>Описание, условия, фотографии, как добраться</p>
 
           </div>
 
@@ -37,11 +36,19 @@ const { md } = useDisplay()
 
       </v-col>
       <v-col class="ma-0 pa-0" cols="6" sm="4" md="3">
-        <div class="tile">
-          <h2>Телефон</h2>
+        <div class="tile" style="background:#313B58; color:white">
+          <div class="top-sub-menu">
+           <img class="ma-2" src="../assets/icons/vk.svg"
+                            alt="">
+          </div>
+
+          <h2> <a href="tel:+7 (912) 856-55-69"> <span class="mdi mdi-cellphone-sound"></span> 7(912)856 55 69 </a>
+          </h2>
+
+
           <div class="sub-menu">
-          <p>dzl_razvitie@mail.ru, соц сети, адрес</p>
-    
+            <p>контакты, адрес</p>
+
           </div>
 
         </div>
@@ -134,6 +141,12 @@ const { md } = useDisplay()
       font-weight: 500;
       font-size: 16px;
     }
+  }
+
+  .top-sub-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
   }
 
 }
