@@ -1,6 +1,6 @@
 <template>
     <v-footer class="footer">
-        <div>Футерное меню</div>
+        <div>Футерное меню сертификаты, пресс-кит, контакты</div>
         <div>
             <img src="../assets/images/madewithlove.png" style="width:150px" alt="">
         </div>
