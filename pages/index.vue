@@ -1,13 +1,10 @@
-<script lang="ts" setup></script>
+<script setup>
+import AdditionalService from '../components/AdditionalService.vue'
+
+</script>
 
 <template>
-  <v-container>
-    <v-row>
-      <v-col>
-        starr
-      </v-col>
-    </v-row>
-  </v-container>
+        <AdditionalService />
 </template>
 
 <style scoped></style>
