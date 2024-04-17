@@ -13,3 +13,16 @@ a {
   text-decoration: none;
   color: white;
 }
+h1 {
+  font-size: clamp(1.25rem, 0.125rem + 2vw, 1.875rem);
+  font-weight: 900;
+  color:#363F58;
+}
+
+.blue-dot{
+  display: inline-block;
+  width: 15px;
+  aspect-ratio: 1;
+  background-color: #0094B4;
+  border-radius:50%;
+}

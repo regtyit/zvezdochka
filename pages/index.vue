@@ -18,7 +18,7 @@ let dialog = ref(false)
       </v-col>
       <v-col class="ma-0 pa-0" cols="6" sm="4" md="3">
         <div class="tile img_2">
-          <h2 class="text-center"> Про Звёздочку</h2>
+          <h2 class="text-center"> <NuxtLink to="/about/description"> О Звёздочке</NuxtLink></h2>
           <div class="sub-menu">
             <p>Описание, условия, фотографии, как добраться</p>
 
@@ -61,9 +61,13 @@ let dialog = ref(false)
       </v-col>
       <v-col class="ma-0 pa-0" cols="6" sm="4" md="3">
         <div class="tile img_4">
-          <h2>новости</h2>
+          <h2>
+            <NuxtLink to="/news">новости</NuxtLink>
+          </h2>
           <div class="sub-menu">
-            <p>События, акции, мероприятия</p>
+            <p>
+              <NuxtLink to="/news">События, акции, мероприятия</NuxtLink>
+            </p>
 
           </div>
         </div>
@@ -138,7 +142,7 @@ let dialog = ref(false)
   flex-direction: column;
   border: none;
   background-size: cover;
-color: white;
+  color: white;
   position: relative;
 
   h2 {
@@ -150,8 +154,8 @@ color: white;
 
   .sub-menu {
     position: absolute;
-    bottom: 5px;
-    right: 5px;
+    bottom: 3px;
+    right: 3px;
 
     p {
       text-align: right;
@@ -173,21 +177,27 @@ color: white;
 .img_1 {
   background-image: url(../assets/images/img_1.jpg);
 }
+
 .img_2 {
   background-image: url(../assets/images/img_2.jpg);
 }
+
 .img_3 {
   background-image: url(../assets/images/img_3.jpg);
 }
+
 .img_4 {
   background-image: url(../assets/images/img_4.jpg);
 }
+
 .img_5 {
   background-image: url(../assets/images/img_5.jpg);
 }
+
 .img_6 {
   background-image: url(../assets/images/img_6.jpg);
 }
+
 .img_7 {
   background-image: url(../assets/images/img_7.jpg);
 }

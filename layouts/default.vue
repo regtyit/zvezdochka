@@ -4,14 +4,21 @@
 
 <template>
 
-  <v-layout class="flex-column" >
+  <v-layout class="flex-column">
     <AppBar />
-    <v-main>
+
+    <v-main class="full-window">
       <NuxtPage />
     </v-main>
     <Footer />
+
+
   </v-layout>
 
 </template>
 
-<style scoped></style>
+<style scoped lang="scss">
+.full-window {
+  min-height: calc(100dvh - 140px)
+}
+</style>

@@ -5,7 +5,7 @@
                 <v-col>
                     <div class="d-flex align-center justify-space-between">
                         <div>
-                            <v-img cover src="../assets/images/long_logo.png" width="180" ></v-img>
+                           <NuxtLink to="/"> <v-img cover src="../assets/images/long_logo.png" width="180" ></v-img></NuxtLink>
                           
                         </div>
                         <v-app-bar-nav-icon></v-app-bar-nav-icon>
