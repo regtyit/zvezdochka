@@ -1,10 +1,10 @@
 <template>
     <v-container>
-        <v-row>
-            <v-col>
-                <!-- <h1 class="text-uppercase text-center">
+        <v-row class="justify-center">
+            <v-col cols="12" md="8">
+                <!-- <h2 class="text-uppercase text-center">
                     <div class="blue-dot"></div> Реквизиты
-                </h1> -->
+                </h2> -->
                 <p class="mb-4">
                     Наименование предприятия (полное): Общество с ограниченной ответственностью «Развитие» <br>
                     Наименование предприятия (сокращенное): ООО «Развитие» <br>

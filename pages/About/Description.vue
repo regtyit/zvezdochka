@@ -6,10 +6,11 @@ let  slide = ref (null)
 
 
     <v-container>
-        <v-parallax height="300" src="../../assets/images/about_photo.jpeg">
+        <v-parallax height="60dvh" src="../../assets/images/about_photo.jpeg">
 
         </v-parallax>
         <v-row>
+
             <v-col>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quaerat voluptate, ratione animi
                 eligendi quibusdam itaque maiores dolore vitae, minus culpa similique fuga quidem veniam illum nam

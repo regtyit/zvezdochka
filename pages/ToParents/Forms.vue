@@ -1,7 +1,7 @@
 <template>
     <v-container>
-        <v-row>
-            <v-col>
+        <v-row class="justify-center">
+            <v-col cols="12" md="8">
                 <!-- <h1 class="text-uppercase text-center">
                     <div class="blue-dot"></div> Документы
                 </h1> -->
