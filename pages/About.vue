@@ -5,7 +5,7 @@ let toggle_menu = ref(
 </script>
 <template>
     <v-container>
-
+        <BackButton/>
         <v-row>
             <v-col cols="12" class="d-flex justify-center">
                 <v-btn-toggle v-model="toggle_menu" color="success" rounded="5" class="d-flex flex-wrap">

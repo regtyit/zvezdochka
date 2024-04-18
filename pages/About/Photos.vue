@@ -2,9 +2,9 @@
     <v-container>
         <v-row>
             <v-col>
-                <h1 class="text-uppercase text-center">
+                <h2 class="text-uppercase text-center">
                     <div class="blue-dot"></div> Фотографии
-                </h1>
+                </h2>
                 <NuxtPage />
             </v-col>
         </v-row>

@@ -74,8 +74,8 @@ let dialog = ref(false)
 
       </v-col>
       <v-col class="ma-0 pa-0" cols="6" sm="4" md="3">
-        <div class="tile img_5">
-          <h2>родителям</h2>
+        <div class="tile img_5"> 
+           <h2> <NuxtLink to="/toparents/takewith">родителям</NuxtLink></h2>
           <div class="sub-menu">
             <p>Реквизиты, бланки, документы, вещи с собой</p>
 

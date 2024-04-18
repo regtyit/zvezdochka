@@ -1,10 +1,11 @@
 <template>
     <v-container>
+        <BackButton/>
         <v-row>
             <v-col>
-                <h1 class="text-uppercase text-center">
+                <h2 class="text-uppercase text-center">
                     <div class="blue-dot"></div> Новости
-                </h1>
+                </h2>
                 
             </v-col>
         </v-row>
