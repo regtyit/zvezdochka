@@ -1,8 +1,23 @@
 <script setup>
+import { onMounted } from 'vue';
 import { useDisplay } from 'vuetify'
+import { gsap } from "gsap";
+import { Flip } from "gsap/Flip";
 const { md } = useDisplay()
 let dialog = ref(false)
+onMounted(() => {
+  gsap.registerPlugin(Flip)
+  const cards = gsap.utils.toArray(".tile");
+  const state = Flip.getState(cards);
+  // element.classList.toggle("img_1");
 
+  Flip.from(state, {
+		duration: 0.6,
+		fade: true,
+		absolute: true,
+		ease: "power1.inOut"
+	});
+})
 </script>
 
 <template>
