@@ -5,19 +5,21 @@ import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
 
 export default defineNuxtPlugin((app) => {
   const vuetify = createVuetify({
-    // theme: {
-    //     themes: {
-    //       light: {
-    //         colors: {
-    //           // background: '#F8E5E5',
-    //           primary: '#1D1D1D',
-    //           accent: '#ED413E',
-    //           success: '#31BB3A',
-    //           secondary:"#ED8F3E"
-    //         },
-    //       },
-    //     },
-    //   },
+    theme: {
+        themes: {
+          light: {
+            colors: {
+              // background: '#F8E5E5',
+              primary: '#E1C1A1',
+              secondary:"#313B58",
+              accent: '#F2D05B',
+              success: '#1597B9',
+              alert: '#D11F1B'
+             
+            },
+          },
+        },
+      },
     icons: {
       defaultSet: 'mdi',
       aliases,
