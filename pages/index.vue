@@ -48,7 +48,7 @@ let dialog = ref(false)
             <br>
           </h2>
           <v-btn @click="dialog = true" variant="outlined" class="ma-2"
-            style="font-size: clamp(0.75rem, -0.875rem + 2vw, 1rem);">Обратная связь</v-btn>
+            style="font-size: clamp(0.625rem, -0.05rem + 1.2vw, 1rem);">Обратная связь</v-btn>
 
 
           <div class="sub-menu">
@@ -111,7 +111,7 @@ let dialog = ref(false)
       </v-col>
     </v-row>
     <v-dialog v-model="dialog" width="auto">
-      <v-card class="overflow-auto pa-4" color="#faebd7">
+      <v-card class="overflow-x-hidden pa-4" color="#faebd7">
         <div class="text-end">
           <span @click="dialog = false" class="mdi mdi-close  cursor-pointer"></span>
         </div>
@@ -149,7 +149,7 @@ let dialog = ref(false)
     cursor: pointer;
     text-transform: uppercase;
     font-weight: 900;
-    font-size: clamp(1.125rem, -1.3125rem + 3vw, 1.5rem);
+    font-size: clamp(1rem, 0.1rem + 1.6vw, 1.5rem);
   }
 
   .sub-menu {
@@ -162,7 +162,7 @@ let dialog = ref(false)
       text-transform: uppercase;
       padding: 5px;
       font-weight: 500;
-      font-size: clamp(0.75rem, -0.875rem + 2vw, 1rem);
+      font-size: clamp(0.625rem, -0.05rem + 1.2vw, 1rem);
     }
   }
 
