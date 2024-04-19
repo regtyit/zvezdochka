@@ -35,6 +35,9 @@
       </v-card>
     </v-dialog> -->
 
+
+  <v-layout class="flex-column" >
+    <AppBar />
     <v-main>
 
       <NuxtPage />
