@@ -17,7 +17,6 @@
   </v-layout>
 
     <!-- <Bottom class="d-flex d-sm-none" /> -->
-  </v-app>
 </template>
 
 <style scoped lang="scss">

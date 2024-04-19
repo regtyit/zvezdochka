@@ -1,5 +1,4 @@
 <script setup>
-import AdditionalService from '../components/AdditionalService.vue'
 import { useDisplay } from 'vuetify'
 const { md } = useDisplay()
 let dialog = ref(false)
@@ -86,7 +85,7 @@ let dialog = ref(false)
       </v-col>
       <v-col class="ma-0 pa-0" cols="6" sm="4" md="3">
         <div class="tile img_6">
-          <h2> доп услуги</h2>
+          <h2><NuxtLink to="/additionalservice">доп услуги</NuxtLink></h2>
           <div class="sub-menu">
             <p>Проживание, питание, аренда, квесты</p>
 
