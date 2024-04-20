@@ -8,7 +8,7 @@ let toggle_menu = ref(
         <BackButton />
         <v-row>
             <v-col cols="12" class="d-flex justify-center ">
-                <h2 class="text-uppercase">Родителям</h2>
+                <h2>Родителям</h2>
             </v-col>
             <v-col cols="12" class="d-flex justify-center ">
                

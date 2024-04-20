@@ -38,7 +38,7 @@ let isActive = (index)=>{
         <BackButton />
         <v-row>
             <v-col cols="12" class="d-flex justify-center ">
-                <h2 class="text-uppercase">О звёздочке</h2>
+                <h2>О звёздочке</h2>
             </v-col>
             <v-col cols="12" class="d-flex justify-center flex-wrap">
 

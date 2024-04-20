@@ -1,19 +1,20 @@
-import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
+import vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
 export default defineNuxtConfig({
-
   router: {
     options: {
-      hashMode: true
-    }
+      hashMode: true,
+    },
   },
   app: {
     head: {
-      charset: 'utf-8',
-      viewport: 'width=device-width, initial-scale=1',
+      charset: "utf-8",
+      viewport: "width=device-width, initial-scale=1",
     },
-    pageTransition: { name: 'page', mode: 'out-in' }
+    pageTransition: { name: "page", mode: "out-in" },
   },
-
+  plugins: [
+    '~/plugins/vuedraggable.js'
+  ],
   css: ["~/assets/main.scss"],
   build: {
     transpile: ["vuetify"],
@@ -26,8 +27,6 @@ export default defineNuxtConfig({
         config.plugins.push(vuetify({ autoImport: true }));
       });
     },
-   
-   
   ],
   vite: {
     vue: {
@@ -36,4 +35,4 @@ export default defineNuxtConfig({
       },
     },
   },
-})
+});

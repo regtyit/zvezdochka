@@ -1,123 +1,130 @@
 <script setup>
-import { onMounted } from 'vue';
+
+
 import { useDisplay } from 'vuetify'
 import { gsap } from "gsap";
 import { Flip } from "gsap/Flip";
 const { md } = useDisplay()
 let dialog = ref(false)
-onMounted(() => {
-  gsap.registerPlugin(Flip)
-  const cards = gsap.utils.toArray(".tile");
-  const state = Flip.getState(cards);
-  // element.classList.toggle("img_1");
 
-  Flip.from(state, {
-		duration: 0.6,
-		fade: true,
-		absolute: true,
-		ease: "power1.inOut"
-	});
-})
+
+let tiles = ref([
+  {
+    title: '',
+    topSubMenu: false,
+    subMenu: '',
+    backgroundClass: 'img_1',
+    routeTo: ''
+
+  },
+  {
+    title: 'О Звёздочке',
+    topSubMenu: false,
+    subMenu: 'Описание, условия, фотографии, как добраться',
+    backgroundClass: 'img_2',
+    routeTo: '/about/description'
+
+  },
+  {
+    title: 'Путевки',
+    topSubMenu: false,
+    subMenu: 'Стоимость, смены, забронировать',
+    backgroundClass: 'img_3',
+    routeTo: '/about/description'
+
+  },
+  {
+    title: '',
+    topSubMenu: true,
+    subMenu: 'Контакты, адрес офиса',
+    backgroundClass: 'img_8',
+    routeTo: ''
+
+  },
+  {
+    title: 'Новости',
+    topSubMenu: false,
+    subMenu: 'События, акции, мероприятия',
+    backgroundClass: 'img_4',
+    routeTo: '/news'
+
+  },
+  {
+    title: 'Родителям',
+    topSubMenu: false,
+    subMenu: 'Реквизиты, бланки, вещи с собой',
+    backgroundClass: 'img_5',
+    routeTo: '/toparents/takewith'
+
+  },
+  {
+    title: 'Доп. услуги',
+    topSubMenu: false,
+    subMenu: 'Проживание, питание, аренда, квесты',
+    backgroundClass: 'img_6',
+    routeTo: '/additionalservice'
+
+  },
+  {
+    title: 'Работа',
+    topSubMenu: false,
+    subMenu: 'Вакансии, анкета',
+    backgroundClass: 'img_7',
+    routeTo: '/about/description'
+
+  }
+])
+
+// onMounted(() => {
+//   gsap.registerPlugin(Flip)
+//   const cards = gsap.utils.toArray(".tile");
+//   const state = Flip.getState(cards);
+//   // element.classList.toggle("img_1");
+
+//   Flip.from(state, {
+//     duration: 0.6,
+//     fade: true,
+//     absolute: true,
+//     ease: "power1.inOut"
+//   });
+// })
 </script>
 
 <template>
   <v-container>
 
     <v-row class="start-page">
-      <v-col class="ma-0 pa-0" cols="6" sm="4" md="3">
-        <div class="tile img_1 ">
-          <!-- <v-img cover src="../assets/images/logo.jpg" style="border-radius: 10px;" class="logo"></v-img> -->
 
-        </div>
+      <draggable v-model="tiles" class="d-flex flex-wrap">
 
-      </v-col>
-      <v-col class="ma-0 pa-0" cols="6" sm="4" md="3">
-        <div class="tile img_2">
-          <h2 class="text-center"> <NuxtLink to="/about/description"> О Звёздочке</NuxtLink></h2>
-          <div class="sub-menu">
-            <p>Описание, условия, фотографии, как добраться</p>
+        <v-col v-for="tile, index in tiles" :key="index" class="ma-0 pa-0" cols="6" sm="4" md="3">
+          <div class="tile" :class="tile.backgroundClass">
+            <div v-if="tile.topSubMenu" class="top-sub-menu">
+              <img class="ma-2" src="../assets/icons/vk.svg" alt="">
+              <img class="ma-2" src="../assets/icons/odn.svg" alt="">
+            </div>
+            <h2 v-if="tile.title" class="text-center">
+              <NuxtLink :to="tile.routeTo"> {{ tile.title }}</NuxtLink>
+            </h2>
+            <div v-if="tile.topSubMenu">
+              <h2> <a href="tel:+7 (912) 856-55-69"> <span class="mdi mdi-cellphone-sound"></span> 7(912)856 55 69
+                </a>
+                <br>
+              </h2>
+              <v-btn @click="dialog = true" variant="outlined" class="ma-2"
+                style="font-size: clamp(0.625rem, -0.05rem + 1.2vw, 1rem);">Обратная связь</v-btn>
+            </div>
 
-          </div>
+            <div class="sub-menu">
+              <p>{{ tile.subMenu }}</p>
 
-        </div>
-
-      </v-col>
-      <v-col class="ma-0 pa-0" cols="6" sm="4" md="3">
-        <div class="tile img_3">
-          <h2>Путевки</h2>
-          <!-- <v-btn variant="outlined" class="ma-2" style="font-size: clamp(0.75rem, -0.875rem + 2vw, 1rem);">Купить-онлайн</v-btn> -->
-          <div class="sub-menu">
-            <p>Стоимость, смены, забронировать</p>
-          </div>
-        </div>
-
-      </v-col>
-      <v-col class="ma-0 pa-0" cols="6" sm="4" md="3">
-        <div class="tile" style="background:#313B58; color:white">
-          <div class="top-sub-menu">
-            <img class="ma-2" src="../assets/icons/vk.svg" alt="">
-            <img class="ma-2" src="../assets/icons/odn.svg" alt="">
-          </div>
-
-          <h2> <a href="tel:+7 (912) 856-55-69"> <span class="mdi mdi-cellphone-sound"></span> 7(912)856 55 69 </a>
-            <br>
-          </h2>
-          <v-btn @click="dialog = true" variant="outlined" class="ma-2"
-            style="font-size: clamp(0.625rem, -0.05rem + 1.2vw, 1rem);">Обратная связь</v-btn>
-
-
-          <div class="sub-menu">
-            <p>контакты, адрес офиса</p>
+            </div>
 
           </div>
+        </v-col>
 
-        </div>
+      </draggable>
 
-      </v-col>
-      <v-col class="ma-0 pa-0" cols="6" sm="4" md="3">
-        <div class="tile img_4">
-          <h2>
-            <NuxtLink to="/news">новости</NuxtLink>
-          </h2>
-          <div class="sub-menu">
-            <p>
-              <NuxtLink to="/news">События, акции, мероприятия</NuxtLink>
-            </p>
-
-          </div>
-        </div>
-
-      </v-col>
-      <v-col class="ma-0 pa-0" cols="6" sm="4" md="3">
-        <div class="tile img_5"> 
-           <h2> <NuxtLink to="/toparents/takewith">родителям</NuxtLink></h2>
-          <div class="sub-menu">
-            <p>Реквизиты, бланки, документы, вещи с собой</p>
-
-          </div>
-        </div>
-
-      </v-col>
-      <v-col class="ma-0 pa-0" cols="6" sm="4" md="3">
-        <div class="tile img_6">
-          <h2><NuxtLink to="/additionalservice">доп услуги</NuxtLink></h2>
-          <div class="sub-menu">
-            <p>Проживание, питание, аренда, квесты</p>
-
-          </div>
-        </div>
-
-      </v-col>
-      <v-col class="ma-0 pa-0" cols="6" sm="4" md="3">
-        <div class="tile img_7">
-          <h2>Работа</h2>
-          <div class="sub-menu">
-            <p>Вакансии, анкета</p>
-
-          </div>
-        </div>
-
-      </v-col>
       <v-col v-if="md" cols="6" sm="4" md="3" class="ma-0 pa-0">
         <div class="tile logo2">
 
@@ -147,7 +154,7 @@ onMounted(() => {
 }
 
 .tile {
-  border-radius: 5%;
+  border-radius: 5px;
   margin: 5px;
   aspect-ratio: 1;
   border: 1px solid black;
@@ -160,17 +167,22 @@ onMounted(() => {
   color: white;
   position: relative;
 
+
   h2 {
     cursor: pointer;
     text-transform: uppercase;
     font-weight: 900;
     font-size: clamp(1rem, 0.1rem + 1.6vw, 1.5rem);
+
   }
 
   .sub-menu {
     position: absolute;
-    bottom: 3px;
-    right: 3px;
+    bottom: 0px;
+    right: 0px;
+
+
+
 
     p {
       text-align: right;
@@ -215,6 +227,10 @@ onMounted(() => {
 
 .img_7 {
   background-image: url(../assets/images/img_7.jpg);
+}
+
+.img_8 {
+  background-image: url(../assets/images/img_8.jpg);
 }
 
 .logo2 {

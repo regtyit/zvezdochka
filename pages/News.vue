@@ -3,7 +3,7 @@
         <BackButton/>
         <v-row>
             <v-col>
-                <h2 class="text-uppercase text-center">
+                <h2 class="text-center">
                     <div class="blue-dot"></div> Новости
                 </h2>
                 

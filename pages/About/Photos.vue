@@ -81,19 +81,12 @@ let photos = ref(
 </script>
 <template>
     <v-container>
-
-
         <v-row>
-
-            <v-col  v-for="photo, index in photos" :key="index" class="d-flex child-flex pa-1" :cols="activeImg(index)"
-                @click="scale(index)">
-
-                <v-img :src="photo.url" aspect-ratio="3/2"  cover>
-                </v-img>
-            </v-col>
+                <v-col v-for="photo, index in photos" :key="index" class="d-flex child-flex pa-1"
+                    :cols="activeImg(index)" @click="scale(index)">
+                    <v-img :src="photo.url" aspect-ratio="3/2" cover>
+                    </v-img>
+                </v-col>   
         </v-row>
-
-
     </v-container>
-
 </template>
