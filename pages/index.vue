@@ -4,8 +4,9 @@
 import { useDisplay } from 'vuetify'
 import { gsap } from "gsap";
 import { Flip } from "gsap/Flip";
-const { md } = useDisplay()
+const { md, mdAndDown } = useDisplay()
 let dialog = ref(false)
+
 
 
 let tiles = ref([
@@ -75,6 +76,7 @@ let tiles = ref([
   }
 ])
 
+
 // onMounted(() => {
 //   gsap.registerPlugin(Flip)
 //   const cards = gsap.utils.toArray(".tile");
@@ -95,7 +97,7 @@ let tiles = ref([
 
     <v-row class="start-page">
 
-      <draggable v-model="tiles" class="d-flex flex-wrap">
+      <draggable class="d-flex flex-wrap" :disabled="mdAndDown">
 
         <v-col v-for="tile, index in tiles" :key="index" class="ma-0 pa-0" cols="6" sm="4" md="3">
           <div class="tile" :class="tile.backgroundClass">
@@ -122,15 +124,15 @@ let tiles = ref([
 
           </div>
         </v-col>
+        <v-col v-if="md" cols="6" sm="4" md="3" class="ma-0 pa-0">
+          <div class="tile logo2">
 
+
+          </div>
+        </v-col>
       </draggable>
 
-      <v-col v-if="md" cols="6" sm="4" md="3" class="ma-0 pa-0">
-        <div class="tile logo2">
 
-
-        </div>
-      </v-col>
     </v-row>
     <v-dialog v-model="dialog" width="auto">
       <v-card class="overflow-x-hidden pa-4" color="#faebd7">
