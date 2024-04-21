@@ -8,12 +8,12 @@
                             <NuxtLink to="/">
                                 <v-img cover src="../assets/images/long_logo.png" width="180">
                                     <template v-slot:placeholder>
-                                        <v-row class="fill-height ma-0" align="center" justify="center">
+                                        <v-row class="fill-height ma-0" align="center" height="64" justify="center">
                                             <v-progress-circular indeterminate></v-progress-circular>
                                         </v-row>
                                     </template>
                                     <template v-slot:error>
-                                        <v-row class="fill-height ma-0" align="center" justify="center">
+                                        <v-row class="fill-height ma-0" align="center" height="64" justify="center">
                                             <span>Ошибка загрузки изображения</span>
                                         </v-row>
                                     </template>
