@@ -96,42 +96,42 @@ let tiles = ref([
   <v-container>
 
     <v-row class="start-page">
+      <ClientOnly>
+        <draggable class="d-flex flex-wrap" :disabled="mdAndDown">
 
-      <draggable class="d-flex flex-wrap" :disabled="mdAndDown">
-
-        <v-col v-for="tile, index in tiles" :key="index" class="ma-0 pa-0" cols="6" sm="4" md="3">
-          <div class="tile" :class="tile.backgroundClass">
-            <div v-if="tile.topSubMenu" class="top-sub-menu">
-              <img class="ma-2" src="../assets/icons/vk.svg" alt="">
-              <img class="ma-2" src="../assets/icons/odn.svg" alt="">
-            </div>
-            <h2 v-if="tile.title" class="text-center">
-              <NuxtLink :to="tile.routeTo"> {{ tile.title }}</NuxtLink>
-            </h2>
-            <div v-if="tile.topSubMenu">
-              <h2> <a href="tel:+7 (912) 856-55-69"> <span class="mdi mdi-cellphone-sound"></span> 7(912)856 55 69
-                </a>
-                <br>
+          <v-col v-for="tile, index in tiles" :key="index" class="ma-0 pa-0" cols="6" sm="4" md="3">
+            <div class="tile" :class="tile.backgroundClass">
+              <div v-if="tile.topSubMenu" class="top-sub-menu">
+                <img class="ma-2" src="../assets/icons/vk.svg" alt="">
+                <img class="ma-2" src="../assets/icons/odn.svg" alt="">
+              </div>
+              <h2 v-if="tile.title" class="text-center">
+                <NuxtLink :to="tile.routeTo"> {{ tile.title }}</NuxtLink>
               </h2>
-              <v-btn @click="dialog = true" variant="outlined" class="ma-2"
-                style="font-size: clamp(0.625rem, -0.05rem + 1.2vw, 1rem);">Обратная связь</v-btn>
+              <div v-if="tile.topSubMenu">
+                <h2> <a href="tel:+7 (912) 856-55-69"> <span class="mdi mdi-cellphone-sound"></span> 7(912)856 55 69
+                  </a>
+                  <br>
+                </h2>
+                <v-btn @click="dialog = true" variant="outlined" class="ma-2"
+                  style="font-size: clamp(0.625rem, -0.05rem + 1.2vw, 1rem);">Обратная связь</v-btn>
+              </div>
+
+              <div class="sub-menu">
+                <p>{{ tile.subMenu }}</p>
+
+              </div>
+
             </div>
+          </v-col>
+          <v-col v-if="md" cols="6" sm="4" md="3" class="ma-0 pa-0">
+            <div class="tile logo2">
 
-            <div class="sub-menu">
-              <p>{{ tile.subMenu }}</p>
 
             </div>
-
-          </div>
-        </v-col>
-        <v-col v-if="md" cols="6" sm="4" md="3" class="ma-0 pa-0">
-          <div class="tile logo2">
-
-
-          </div>
-        </v-col>
-      </draggable>
-
+          </v-col>
+        </draggable>
+      </ClientOnly>
 
     </v-row>
     <v-dialog v-model="dialog" width="auto">
