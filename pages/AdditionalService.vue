@@ -12,8 +12,9 @@ import priceList from '../db/AdditionalService.json'
         <v-row>
             <v-col cols="12">
                 <h2 class="text-center">
-                    <div class="blue-dot"></div> Прайс-лист на обслуживание <br> декабрь - май 2024г, руб.
+                    <div class="blue-dot"></div> Прайс-лист
                 </h2>
+                <h3 class="text-center">на декабрь - май 2024г, руб</h3>
             </v-col>
         </v-row>
         <v-row justify="center" class="align-stretch">
