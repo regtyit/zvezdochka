@@ -43,15 +43,35 @@ let infoCards = ref([
     <v-container>
 
         <v-row>
-         
+
             <v-col cols="12" md="8">
-                <v-img class="rounded-lg" src="../../assets/images/about_photo.jpeg"></v-img>
+                <v-img class="rounded-lg" src="../../assets/images/about_photo.jpeg">
+                    <template v-slot:placeholder>
+                        <v-row class="fill-height ma-0" align="center" justify="center">
+                            <v-progress-circular indeterminate></v-progress-circular>
+                        </v-row>
+                    </template>
+                    <template v-slot:error>
+                        <v-row class="fill-height ma-0" align="center" justify="center">
+                            <span>Ошибка загрузки изображения</span>
+                        </v-row>
+                    </template>
+                </v-img>
                 <!-- <div class="main-img"></div> -->
             </v-col>
             <v-col class="d-none d-md-block " cols="12" md="4">
-                <div class=" d-flex justify-center" >
-                    <v-img src="../../assets/images/big_logo.png"   max-height="400">
-
+                <div class=" d-flex justify-center">
+                    <v-img src="../../assets/images/big_logo.png" max-height="400">
+                        <template v-slot:placeholder>
+                            <v-row class="fill-height ma-0" align="center" justify="center">
+                                <v-progress-circular indeterminate></v-progress-circular>
+                            </v-row>
+                        </template>
+                        <template v-slot:error>
+                            <v-row class="fill-height ma-0" align="center" justify="center">
+                                <span>Ошибка загрузки изображения</span>
+                            </v-row>
+                        </template>
                     </v-img>
                 </div>
 
@@ -79,7 +99,7 @@ let infoCards = ref([
 
 </template>
 <style scoped lang="scss">
-div{
+div {
     color: #fbefe0
 }
 </style>
