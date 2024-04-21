@@ -5,27 +5,34 @@ let toggle_menu = ref(
 </script>
 <template>
     <v-container>
-        <BackButton />
         <v-row>
-            <v-col cols="12" class="d-flex justify-center ">
-                <h2>Родителям</h2>
+            <v-col cols="12">
+                <BackButton />
             </v-col>
-            <v-col cols="12" class="d-flex justify-center ">
-               
-                <v-btn-toggle v-model="toggle_menu" color="success" rounded="5" class="d-flex flex-wrap" >
-                    <v-btn to="/toparents/takewith" class="pa-2">
-                        Взять с собой
-                    </v-btn>
-                   
-                    <v-btn to="/toparents/forms">
-                        Документы
-                    </v-btn>
-                    <v-btn to="/toparents/requisites">
-                        Реквизиты
-                    </v-btn>
+        </v-row>
+        <v-row>
+            <v-col cols="12" class="pa-0">
+                <h2 class="text-center">
+                    <div class="blue-dot"></div> Родителям
+                </h2>
+            </v-col>
+
+            <v-col cols="12" class="d-flex justify-center flex-wrap">
 
 
-                </v-btn-toggle></v-col>
+                <v-btn variant="text" to="/toparents/takewith" class="pa-2">
+                    Взять с собой
+                </v-btn>
+
+                <v-btn variant="text" to="/toparents/forms">
+                    Документы
+                </v-btn>
+                <v-btn variant="text" to="/toparents/requisites">
+                    Реквизиты
+                </v-btn>
+
+
+            </v-col>
             <v-col>
 
                 <NuxtPage />
@@ -34,3 +41,25 @@ let toggle_menu = ref(
     </v-container>
 
 </template>
+
+
+<!--  
+<div>
+    <v-container>
+        <v-row>
+            <v-col cols="12">
+                <BackButton />
+            </v-col>
+        </v-row>
+        <v-row>
+            <v-col cols="12" class="pa-0 ">
+               <h2 class="text-center">  <div class="blue-dot"></div> О звёздочке</h2>
+            </v-col>
+            <v-col cols="12" class="d-flex justify-center flex-wrap">
+                <v-btn variant="text" class="ma-1" v-for="menuItem, index in toggle_menu" :to="menuItem.route"
+                    @click="setActive(index)" >{{ menuItem.name }} </v-btn>
+            </v-col>
+        </v-row>
+    </v-container>
+    <NuxtPage />
+</div> -->

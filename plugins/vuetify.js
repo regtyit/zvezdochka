@@ -10,10 +10,10 @@ export default defineNuxtPlugin((app) => {
           light: {
             colors: {
               // background: '#F8E5E5',
-              primary: '#E1C1A1',
+              primary: '#faebd7',
               secondary:"#313B58",
-              accent: '#F2D05B',
-              success: '#1597B9',
+              accent: '#E2BD5C',
+              success: '#138597',
               alert: '#D11F1B'
              
             },
