@@ -9,7 +9,7 @@ let infoCards = ref([
     },
     {
         text: ` В живописном  лесном массиве <b> на берегу реки Чепца </b>. Вокруг сосновый лес, луга, ягодные места.`,
-        color: "#fbefe0"
+        color: "secondary"
 
     },
     {
@@ -20,7 +20,7 @@ let infoCards = ref([
     },
     {
         text: `Детские <b> игровые площадки </b>, открытая танцевальная площадка,<b> летняя эстрада </b> с современным светозвуковым оформлением.`,
-        color: "#fbefe0"
+        color: "secondary"
 
     },
     {
@@ -30,12 +30,11 @@ let infoCards = ref([
     },
     {
         text: `<h3> ... на 120 гектарах. </h3>`,
-        color: "#fbefe0"
+        color: "secondary"
 
     },
 
 ])
-
 </script>
 <template>
 
