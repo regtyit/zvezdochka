@@ -1,13 +1,12 @@
 <script setup>
-
+import { ref,onMounted,nextTick } from 'vue'
 
 import { useDisplay } from 'vuetify'
 import { gsap } from "gsap";
 import { Flip } from "gsap/Flip";
 const { md, mdAndDown } = useDisplay()
 let dialog = ref(false)
-
-
+let toNormalPosition=ref(false)
 
 let tiles = ref([
   {
@@ -15,6 +14,7 @@ let tiles = ref([
     topSubMenu: false,
     subMenu: '',
     backgroundClass: 'img_1',
+    moveClass: 'tile_1',
     routeTo: ''
 
   },
@@ -23,6 +23,7 @@ let tiles = ref([
     topSubMenu: false,
     subMenu: 'Описание, условия, фотографии, как добраться',
     backgroundClass: 'img_2',
+    moveClass: 'tile_2',
     routeTo: '/about/description'
 
   },
@@ -31,6 +32,7 @@ let tiles = ref([
     topSubMenu: false,
     subMenu: 'Стоимость, смены, забронировать',
     backgroundClass: 'img_3',
+    moveClass: 'tile_3',
     routeTo: '/about/description'
 
   },
@@ -39,6 +41,7 @@ let tiles = ref([
     topSubMenu: true,
     subMenu: 'Контакты, адрес офиса',
     backgroundClass: 'img_8',
+    moveClass: 'tile_8',
     routeTo: ''
 
   },
@@ -47,6 +50,7 @@ let tiles = ref([
     topSubMenu: false,
     subMenu: 'События, акции, мероприятия',
     backgroundClass: 'img_4',
+    moveClass: 'tile_4',
     routeTo: '/news'
 
   },
@@ -55,6 +59,7 @@ let tiles = ref([
     topSubMenu: false,
     subMenu: 'Реквизиты, бланки, вещи с собой',
     backgroundClass: 'img_5',
+    moveClass: 'tile_5',
     routeTo: '/toparents/takewith'
 
   },
@@ -63,6 +68,7 @@ let tiles = ref([
     topSubMenu: false,
     subMenu: 'Проживание, питание, аренда, квесты',
     backgroundClass: 'img_6',
+    moveClass: 'tile_6',
     routeTo: '/additionalservice'
 
   },
@@ -71,36 +77,38 @@ let tiles = ref([
     topSubMenu: false,
     subMenu: 'Вакансии, анкета',
     backgroundClass: 'img_7',
+    moveClass: 'tile_7',
     routeTo: '/about/description'
 
   }
 ])
 
 
-// onMounted(() => {
-//   gsap.registerPlugin(Flip)
-//   const cards = gsap.utils.toArray(".tile");
-//   const state = Flip.getState(cards);
-//   // element.classList.toggle("img_1");
-
-//   Flip.from(state, {
-//     duration: 0.6,
-//     fade: true,
-//     absolute: true,
-//     ease: "power1.inOut"
-//   });
-// })
+onMounted(() => {
+  gsap.registerPlugin(Flip)
+  const state = Flip.getState('#for_move');
+  console.log(state)
+  toNormalPosition.value=!toNormalPosition.value
+    nextTick(() => {
+      
+      Flip.from(state, {
+        targets: ".tile",
+        duration: 4,
+      })
+      
+    })
+})
 </script>
 
 <template>
   <v-container>
 
     <v-row class="start-page">
-      <ClientOnly>
+      <!-- <ClientOnly> -->
         <draggable class="d-flex flex-wrap" :disabled="mdAndDown">
 
-          <v-col v-for="tile, index in tiles" :key="index" class="ma-0 pa-0" cols="6" sm="4" md="3">
-            <div class="tile" :class="tile.backgroundClass">
+          <v-col v-for="tile, index in tiles" :key="index" class="ma-0 pa-0 tiled_map" cols="6" sm="4" md="3">
+            <div id="for_move" class="tile" :class="[toNormalPosition ? [tile.backgroundClass,tile.moveClass] : tile.backgroundClass]">
               <div v-if="tile.topSubMenu" class="top-sub-menu">
                 <img class="ma-2" src="../assets/icons/vk.svg" alt="">
                 <img class="ma-2" src="../assets/icons/odn.svg" alt="">
@@ -131,7 +139,7 @@ let tiles = ref([
             </div>
           </v-col>
         </draggable>
-      </ClientOnly>
+      <!-- </ClientOnly> -->
 
     </v-row>
     <v-dialog v-model="dialog" width="auto">
@@ -202,9 +210,12 @@ let tiles = ref([
   }
 
 }
-
+#for_move{
+  transform: translateX(0px);
+}
 .img_1 {
   background-image: url(../assets/images/img_1.jpg);
+  transform: translateX(-100px);
 }
 
 .img_2 {
@@ -234,6 +245,39 @@ let tiles = ref([
 .img_8 {
   background-image: url(../assets/images/img_8.jpg);
 }
+
+
+.tile_1 {
+}
+
+.tile_2 {
+  background-image: url(../assets/images/img_2.jpg);
+}
+
+.tile_3 {
+  background-image: url(../assets/images/img_3.jpg);
+}
+
+.tile_4 {
+  background-image: url(../assets/images/img_4.jpg);
+}
+
+.tile_5 {
+  background-image: url(../assets/images/img_5.jpg);
+}
+
+.tile_6 {
+  background-image: url(../assets/images/img_6.jpg);
+}
+
+.tile_7 {
+  background-image: url(../assets/images/img_7.jpg);
+}
+
+.tile_8 {
+  background-image: url(../assets/images/img_8.jpg);
+}
+
 
 .logo2 {
   height: 100%;
