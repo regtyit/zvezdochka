@@ -1,6 +1,5 @@
 <script setup>
-import logo from '~/public/long_logo.png?url'
-
+import logo from '~/public/long_logo.png'
 useHead({
   link: [
     { rel: 'preload', as: 'image', href: logo },
@@ -12,8 +11,8 @@ useHead({
     <v-app-bar elevation="0" color="#faebd7">
         <v-container>
             <v-row>
-                <v-col>
-                    <div class="d-flex align-center justify-space-between">
+                <v-col class="d-flex align-center justify-space-between">
+                    
                         <div>
                             <NuxtLink to="/">
                                 <v-img cover :src="logo" width="180">
@@ -32,7 +31,7 @@ useHead({
 
                         </div>
                         <v-app-bar-nav-icon></v-app-bar-nav-icon>
-                    </div>
+                  
 
                 </v-col>
             </v-row>

@@ -1,19 +1,18 @@
 <script setup>
-import { ref,onMounted,nextTick } from 'vue'
-
 import { useDisplay } from 'vuetify'
 import { gsap } from "gsap";
-import { Flip } from "gsap/Flip";
+
 const { md, mdAndDown } = useDisplay()
 let dialog = ref(false)
-let toNormalPosition=ref(false)
+
+let animationPlayed= ref(false) 
 
 let tiles = ref([
   {
     title: '',
     topSubMenu: false,
     subMenu: '',
-    backgroundClass: 'img_1',
+    tileId: 'img_1',
     moveClass: 'tile_1',
     routeTo: ''
 
@@ -22,8 +21,7 @@ let tiles = ref([
     title: 'О Звёздочке',
     topSubMenu: false,
     subMenu: 'Описание, условия, фотографии, как добраться',
-    backgroundClass: 'img_2',
-    moveClass: 'tile_2',
+    tileId: 'img_2',
     routeTo: '/about/description'
 
   },
@@ -31,8 +29,7 @@ let tiles = ref([
     title: 'Путевки',
     topSubMenu: false,
     subMenu: 'Стоимость, смены, забронировать',
-    backgroundClass: 'img_3',
-    moveClass: 'tile_3',
+    tileId: 'img_3',
     routeTo: '/about/description'
 
   },
@@ -40,8 +37,7 @@ let tiles = ref([
     title: '',
     topSubMenu: true,
     subMenu: 'Контакты, адрес офиса',
-    backgroundClass: 'img_8',
-    moveClass: 'tile_8',
+    tileId: 'img_8',
     routeTo: ''
 
   },
@@ -49,8 +45,7 @@ let tiles = ref([
     title: 'Новости',
     topSubMenu: false,
     subMenu: 'События, акции, мероприятия',
-    backgroundClass: 'img_4',
-    moveClass: 'tile_4',
+    tileId: 'img_4',
     routeTo: '/news'
 
   },
@@ -58,8 +53,7 @@ let tiles = ref([
     title: 'Родителям',
     topSubMenu: false,
     subMenu: 'Реквизиты, бланки, вещи с собой',
-    backgroundClass: 'img_5',
-    moveClass: 'tile_5',
+    tileId: 'img_5',
     routeTo: '/toparents/takewith'
 
   },
@@ -67,8 +61,7 @@ let tiles = ref([
     title: 'Доп. услуги',
     topSubMenu: false,
     subMenu: 'Проживание, питание, аренда, квесты',
-    backgroundClass: 'img_6',
-    moveClass: 'tile_6',
+    tileId: 'img_6',
     routeTo: '/additionalservice'
 
   },
@@ -76,39 +69,46 @@ let tiles = ref([
     title: 'Работа',
     topSubMenu: false,
     subMenu: 'Вакансии, анкета',
-    backgroundClass: 'img_7',
-    moveClass: 'tile_7',
+    tileId: 'img_7',
     routeTo: '/about/description'
 
   }
 ])
 
 
-onMounted(() => {
-  gsap.registerPlugin(Flip)
-  const state = Flip.getState('#for_move');
-  console.log(state)
-  toNormalPosition.value=!toNormalPosition.value
-    nextTick(() => {
-      
-      Flip.from(state, {
-        targets: ".tile",
-        duration: 4,
-      })
-      
-    })
-})
+onMounted(async () => {
+
+  animationPlayed.value = sessionStorage.getItem("animationPlayed")
+  if (process.browser && !animationPlayed.value) {
+    await nextTick();
+    gsap.from("#img_1", { x: -100, duration: 1 });
+    gsap.from("#img_2", { y: -100, duration: 1 });
+    gsap.from("#img_3", { y: -100, duration: 1 });
+    gsap.from("#img_4", { x: -100, duration: 1 });
+    gsap.from("#img_5", { y: 100, duration: 1 });
+    gsap.from("#img_6", { y: 100, duration: 1 });
+    gsap.from("#img_7", { x: 100, duration: 1 });
+    gsap.from("#img_8", { x: 100, duration: 1 });
+
+    // Устанавливаем флаг, что анимация выполнена
+    animationPlayed.value = true;
+    // Сохраняем состояние анимации в sessionStorage
+    sessionStorage.setItem("animationPlayed", "true");
+  }
+}
+)
+
 </script>
 
 <template>
   <v-container>
 
     <v-row class="start-page">
-      <!-- <ClientOnly> -->
+      <ClientOnly>
         <draggable class="d-flex flex-wrap" :disabled="mdAndDown">
 
-          <v-col v-for="tile, index in tiles" :key="index" class="ma-0 pa-0 tiled_map" cols="6" sm="4" md="3">
-            <div id="for_move" class="tile" :class="[toNormalPosition ? [tile.backgroundClass,tile.moveClass] : tile.backgroundClass]">
+          <v-col v-for="tile, index in tiles" :key="index" class="ma-0 pa-0 " cols="6" sm="4" md="3">
+            <div class="tile" :id="tile.tileId">
               <div v-if="tile.topSubMenu" class="top-sub-menu">
                 <img class="ma-2" src="../assets/icons/vk.svg" alt="">
                 <img class="ma-2" src="../assets/icons/odn.svg" alt="">
@@ -139,7 +139,7 @@ onMounted(() => {
             </div>
           </v-col>
         </draggable>
-      <!-- </ClientOnly> -->
+      </ClientOnly>
 
     </v-row>
     <v-dialog v-model="dialog" width="auto">
@@ -210,71 +210,36 @@ onMounted(() => {
   }
 
 }
-#for_move{
-  transform: translateX(0px);
-}
-.img_1 {
+
+#img_1 {
   background-image: url(../assets/images/img_1.jpg);
-  transform: translateX(-100px);
 }
 
-.img_2 {
+#img_2 {
   background-image: url(../assets/images/img_2.jpg);
 }
 
-.img_3 {
+#img_3 {
   background-image: url(../assets/images/img_3.jpg);
 }
 
-.img_4 {
+#img_4 {
   background-image: url(../assets/images/img_4.jpg);
 }
 
-.img_5 {
+#img_5 {
   background-image: url(../assets/images/img_5.jpg);
 }
 
-.img_6 {
+#img_6 {
   background-image: url(../assets/images/img_6.jpg);
 }
 
-.img_7 {
+#img_7 {
   background-image: url(../assets/images/img_7.jpg);
 }
 
-.img_8 {
-  background-image: url(../assets/images/img_8.jpg);
-}
-
-
-.tile_1 {
-}
-
-.tile_2 {
-  background-image: url(../assets/images/img_2.jpg);
-}
-
-.tile_3 {
-  background-image: url(../assets/images/img_3.jpg);
-}
-
-.tile_4 {
-  background-image: url(../assets/images/img_4.jpg);
-}
-
-.tile_5 {
-  background-image: url(../assets/images/img_5.jpg);
-}
-
-.tile_6 {
-  background-image: url(../assets/images/img_6.jpg);
-}
-
-.tile_7 {
-  background-image: url(../assets/images/img_7.jpg);
-}
-
-.tile_8 {
+#img_8 {
   background-image: url(../assets/images/img_8.jpg);
 }
 

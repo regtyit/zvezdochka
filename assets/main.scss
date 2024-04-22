@@ -16,7 +16,7 @@ a {
 h1 {
   font-size: clamp(1.25rem, 0.125rem + 2vw, 1.875rem);
   font-weight: 900;
-  color:#363F58;
+
 }
 
 
@@ -38,13 +38,3 @@ h1 {
   // filter: blur(1rem);
 }
 
-.opacity-enter-active,
-.opacity-leave-active {
-  transition: all 1s ease;
-}
-.opacity-enter-from,
-.opacity-leave-to {
-  opacity: 0;
-  transform: translateY(20px);
- 
-}
