@@ -39,7 +39,7 @@ let toggle_menu = ref(
                        <h2 class="text-center">  <div class="blue-dot"></div> О звёздочке</h2>
                     </v-col>
                     <v-col cols="12" class="d-flex justify-center flex-wrap">
-                        <v-btn variant="text" class="ma-1" v-for="menuItem, index in toggle_menu" :to="menuItem.route"
+                        <v-btn variant="text" class="ma-1" :ripple="false" v-for="menuItem, index in toggle_menu" :to="menuItem.route"
                              >{{ menuItem.name }} </v-btn>
                     </v-col>
                 </v-row>
