@@ -20,14 +20,14 @@ let toggle_menu = ref(
             <v-col cols="12" class="d-flex justify-center flex-wrap">
 
 
-                <v-btn variant="text" to="/toparents/takewith" class="pa-2">
+                <v-btn class="ma-1" :ripple="false" variant="text" to="/toparents/takewith">
                     Взять с собой
                 </v-btn>
 
-                <v-btn variant="text" to="/toparents/forms">
+                <v-btn class="ma-1" :ripple="false" variant="text" to="/toparents/forms">
                     Документы
                 </v-btn>
-                <v-btn variant="text" to="/toparents/requisites">
+                <v-btn class="ma-1" :ripple="false" variant="text" to="/toparents/requisites">
                     Реквизиты
                 </v-btn>
 
