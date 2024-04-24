@@ -2,15 +2,15 @@
     <v-container>
         <v-row>
             <v-col>
-                <iframe height="350"
-                    src="https://www.openstreetmap.org/export/embed.html?bbox=52.80428409576417%2C58.12681240958564%2C52.84342288970948%2C58.144211853768944&amp;layer=mapnik&amp;marker=58.135513194246464%2C52.823853492736816"
-                    style="width:100%"></iframe>
-                <div>
-                    <a href="https://www.openstreetmap.org/?mlat=58.1355&amp;mlon=52.8239#map=15/58.1355/52.8239"
-                        target="_blank">
-                        <small style="color:black"> Посмотреть
-                            более крупную карту </small></a>
-                </div>
+                <div style="position:relative;overflow:hidden;"><a
+                        href="https://yandex.ru/maps/org/dzl_zvyozdochka/102488833298/?utm_medium=mapframe&utm_source=maps"
+                        style="color:#eee;font-size:12px;position:absolute;top:0px;">Дзл Звёздочка</a><a
+                        href="https://yandex.ru/maps/11148/udmurt-republic/category/summer_camp/184106418/?utm_medium=mapframe&utm_source=maps"
+                        style="color:#eee;font-size:12px;position:absolute;top:14px;">Детский лагерь отдыха в Удмуртской
+                        Республике</a><iframe
+                        src="https://yandex.ru/map-widget/v1/?ll=52.785018%2C58.133793&mode=search&oid=102488833298&ol=biz&z=12.95"
+                        width="100%" height="400" frameborder="0" allowfullscreen="true"
+                        style="position:relative;"></iframe></div>
 
             </v-col>
         </v-row>
