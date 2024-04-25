@@ -32,7 +32,7 @@ useHead({
                         </NuxtLink>
 
                     </div>
-                    <div v-if="!mdAndDown" class="d-flex justify-center w-100">
+                    <div v-if="!mdAndDown" class="d-flex justify-center w-100 font-weight-bold">
 
                         <div class="ma-2" on-touchcancel="">
                             <NuxtLink to="/about/description">О лагере</NuxtLink>
@@ -40,13 +40,13 @@ useHead({
                         <div class="ma-2"> <NuxtLink to="/about/description">Путевки</NuxtLink> </div>
                         <div class="ma-2"> <NuxtLink to="/about/description">Новости</NuxtLink></div>
                         <div class="ma-2"> <NuxtLink to="/toparents/takewith">Родителям</NuxtLink></div>
-                        <div class="ma-2"> <NuxtLink to="/additionalservice">Доп услуги</NuxtLink></div>
+                        <div class="ma-2"> <NuxtLink to="/additionalservice">Доп. услуги</NuxtLink></div>
                         <div class="ma-2"> <NuxtLink to="/about/description">Работа</NuxtLink></div>
 
 
 
                     </div>
-                    <v-app-bar-nav-icon></v-app-bar-nav-icon>
+                    <v-app-bar-nav-icon v-if="mdAndDown"></v-app-bar-nav-icon>
 
 
                 </v-col>
