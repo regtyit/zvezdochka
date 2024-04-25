@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 const { md, mdAndDown } = useDisplay()
 let dialog = ref(false)
 
-let animationPlayed= ref(false) 
+let animationPlayed = ref(false)
 
 let tiles = ref([
   {
@@ -102,9 +102,9 @@ onMounted(async () => {
 
 <template>
   <v-container>
+    <ClientOnly>
+      <v-row class="start-page">
 
-    <v-row class="start-page">
-      <ClientOnly>
         <draggable class="d-flex flex-wrap" :disabled="mdAndDown">
 
           <v-col v-for="tile, index in tiles" :key="index" class="ma-0 pa-0 " cols="6" sm="4" md="3">
@@ -139,19 +139,20 @@ onMounted(async () => {
             </div>
           </v-col>
         </draggable>
-      </ClientOnly>
-
-    </v-row>
-    <v-dialog v-model="dialog" width="auto">
-      <v-card class="overflow-x-hidden pa-4" color="#faebd7">
-        <div class="text-end">
-          <span @click="dialog = false" class="mdi mdi-close  cursor-pointer"></span>
-        </div>
 
 
-        <Feedback />
-      </v-card>
-    </v-dialog>
+      </v-row>
+      <v-dialog v-model="dialog" width="auto">
+        <v-card class="overflow-x-hidden pa-4" color="#faebd7">
+          <div class="text-end">
+            <span @click="dialog = false" class="mdi mdi-close  cursor-pointer"></span>
+          </div>
+
+
+          <Feedback />
+        </v-card>
+      </v-dialog>
+    </ClientOnly>
   </v-container>
 </template>
 
