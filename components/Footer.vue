@@ -1,8 +1,24 @@
 <template>
     <v-footer class="footer" height="100px">
-        <div>Футерное меню сертификаты, пресс-кит, контакты</div>
+        <v-divider width="350px" class="ma-2"></v-divider>
+        <div class="d-flex justify-center">
+            <NuxtLink to="/permissions">
+                <div class="ma-2">Документы</div>
+            </NuxtLink>
+            <NuxtLink to="/contacts">
+                <div class="ma-2">Контакты</div>
+            </NuxtLink>
+            <NuxtLink to="/presskit">
+                <div class="ma-2">Пресс-кит</div>
+            </NuxtLink>
+
+
+        </div>
+        <v-divider width="350px" class="ma-2"></v-divider>
         <div>
-            <img src="../assets/images/madewithlove.png" style="width:150px" alt="">
+            <a href="https://qbit-club.com" target="_blank">
+                <img src="../assets/images/madewithlove.png" style="width:120px" alt="">
+            </a>
         </div>
 
 
@@ -16,5 +32,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+a {
+    color: black
 }
 </style>

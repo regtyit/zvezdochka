@@ -39,10 +39,10 @@ useHead({
                                 <NuxtLink to="/about/description">О лагере</NuxtLink>
                             </div>
                             <div class="ma-2">
-                                <NuxtLink to="/about/description">Путевки</NuxtLink>
+                                <NuxtLink to="/pass">Путевки</NuxtLink>
                             </div>
                             <div class="ma-2">
-                                <NuxtLink to="/about/description">Новости</NuxtLink>
+                                <NuxtLink to="/news">Новости</NuxtLink>
                             </div>
                             <div class="ma-2">
                                 <NuxtLink to="/toparents/takewith">Родителям</NuxtLink>
@@ -51,7 +51,7 @@ useHead({
                                 <NuxtLink to="/additionalservice">Доп. услуги</NuxtLink>
                             </div>
                             <div class="ma-2">
-                                <NuxtLink to="/about/description">Работа</NuxtLink>
+                                <NuxtLink to="/job">Работа</NuxtLink>
                             </div>
 
 

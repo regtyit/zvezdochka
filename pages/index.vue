@@ -30,7 +30,7 @@ let tiles = ref([
     topSubMenu: false,
     subMenu: 'Стоимость, смены, забронировать',
     tileId: 'img_3',
-    routeTo: '/about/description'
+    routeTo: '/pass'
 
   },
   {
@@ -38,7 +38,7 @@ let tiles = ref([
     topSubMenu: true,
     subMenu: 'Контакты, адрес офиса',
     tileId: 'img_8',
-    routeTo: ''
+    routeTo: '/contacts'
 
   },
   {
@@ -70,7 +70,7 @@ let tiles = ref([
     topSubMenu: false,
     subMenu: 'Вакансии, анкета',
     tileId: 'img_7',
-    routeTo: '/about/description'
+    routeTo: '/job'
 
   }
 ])
@@ -110,8 +110,8 @@ onMounted(async () => {
           <v-col v-for="tile, index in tiles" :key="index" class="ma-0 pa-0 " cols="6" sm="4" md="3">
             <div class="tile" :id="tile.tileId">
               <div v-if="tile.topSubMenu" class="top-sub-menu">
-                <img class="ma-2" src="../assets/icons/vk.svg" alt="">
-                <img class="ma-2" src="../assets/icons/odn.svg" alt="">
+             <a href="https://vk.com/public204964757" target="_blank"><img class="ma-2" src="../assets/icons/vk.svg" alt=""></a>    
+              <a href="https://ok.ru/group/70000001824558" target="_blank"><img class="ma-2" src="../assets/icons/odn.svg" alt=""></a>  
               </div>
               <h2 v-if="tile.title" class="text-center">
                 <NuxtLink :to="tile.routeTo"> {{ tile.title }}</NuxtLink>
@@ -123,10 +123,15 @@ onMounted(async () => {
                 </h2>
                 <v-btn @click="dialog = true" variant="outlined" class="ma-2"
                   style="font-size: clamp(0.625rem, -0.05rem + 1.2vw, 1rem);">Обратная связь</v-btn>
+
               </div>
 
               <div class="sub-menu">
-                <p>{{ tile.subMenu }}</p>
+
+                <NuxtLink :to="tile.routeTo">
+                  <p>{{ tile.subMenu }}</p>
+                </NuxtLink>
+
 
               </div>
 
@@ -143,14 +148,16 @@ onMounted(async () => {
 
       </v-row>
       <v-dialog v-model="dialog" width="auto">
-        <v-card class="overflow-x-hidden pa-4" color="#faebd7">
+        <div class=" pa-4 overflow-x-hidden" style="background: white;">
+
+
           <div class="text-end">
             <span @click="dialog = false" class="mdi mdi-close  cursor-pointer"></span>
           </div>
 
 
           <Feedback />
-        </v-card>
+        </div>
       </v-dialog>
     </ClientOnly>
   </v-container>
@@ -162,6 +169,7 @@ onMounted(async () => {
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .tile {
