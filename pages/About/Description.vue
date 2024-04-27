@@ -61,7 +61,7 @@ let infoCards = ref([
                 <!-- <div class="main-img"></div> -->
             </v-col>
             <v-col class="d-none d-md-block " cols="12" md="4">
-                <v-card class=" d-flex justify-center  align-center h-100" color="secondary"  elevation="8" >
+                <div class=" d-flex justify-center  align-center h-100"  >
 
                     <v-img src="../../assets/images/big_logo.png" max-height="200" >
                         <template v-slot:placeholder>
@@ -75,7 +75,7 @@ let infoCards = ref([
                             </v-row>
                         </template>
                     </v-img>
-                </v-card>
+                </div>
 
 
                 <!-- <div class="main-img"></div> -->

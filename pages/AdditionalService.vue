@@ -17,7 +17,7 @@ import priceList from '../db/AdditionalService.json'
                 <h3 class="text-center">на декабрь - май 2024г, руб</h3>
             </v-col>
         </v-row>
-        <v-card elevation="8" class="pa-8 ma-8">
+        <v-card elevation="8" class="pa-8">
             <v-row justify="center" class="align-stretch">
 
                 <v-col cols="12" md="6" v-for="(item, i) in priceList.service_list" :key="i" class="">
