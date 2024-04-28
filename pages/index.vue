@@ -101,7 +101,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <v-container>
+  <v-container >
     <ClientOnly>
       <v-row class="start-page">
 
@@ -110,8 +110,10 @@ onMounted(async () => {
           <v-col v-for="tile, index in tiles" :key="index" class="ma-0 pa-0 " cols="6" sm="4" md="3">
             <div class="tile" :id="tile.tileId">
               <div v-if="tile.topSubMenu" class="top-sub-menu">
-             <a href="https://vk.com/public204964757" target="_blank"><img class="ma-2" src="../assets/icons/vk.svg" alt=""></a>    
-              <a href="https://ok.ru/group/70000001824558" target="_blank"><img class="ma-2" src="../assets/icons/odn.svg" alt=""></a>  
+                <a href="https://vk.com/public204964757" target="_blank"><img class="ma-2" src="../assets/icons/vk.svg"
+                    alt=""></a>
+                <a href="https://ok.ru/group/70000001824558" target="_blank"><img class="ma-2"
+                    src="../assets/icons/odn.svg" alt=""></a>
               </div>
               <h2 v-if="tile.title" class="text-center">
                 <NuxtLink :to="tile.routeTo"> {{ tile.title }}</NuxtLink>
@@ -165,7 +167,6 @@ onMounted(async () => {
 
 <style lang="scss" scoped>
 .start-page {
-
   display: flex;
   justify-content: center;
   align-items: center;
