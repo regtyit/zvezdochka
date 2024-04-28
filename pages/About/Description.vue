@@ -63,7 +63,7 @@ let infoCards = ref([
             <v-col class="d-none d-md-block " cols="12" md="4">
                 <div class=" d-flex justify-center  align-center h-100"  >
 
-                    <v-img src="../../assets/images/big_logo.png" max-height="200" >
+                    <v-img src="../../assets/images/big_logo.png" max-height="250" >
                         <template v-slot:placeholder>
                             <v-row class="fill-height ma-0" align="center" justify="center">
                                 <v-progress-circular indeterminate></v-progress-circular>

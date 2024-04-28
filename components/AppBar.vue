@@ -21,7 +21,7 @@ useHead({
 
                         <div>
                             <NuxtLink to="/">
-                                <v-img cover :src="logo" width="160">
+                                <v-img cover :src="logo" width="180">
                                     <template v-slot:placeholder>
                                         <v-row class="fill-height ma-0" align="center" justify="center">
                                             <v-progress-circular indeterminate></v-progress-circular>
