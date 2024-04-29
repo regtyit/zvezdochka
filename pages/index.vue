@@ -127,7 +127,7 @@ onMounted(async () => {
                   </a>
                   <br>
                 </h2>
-                <v-btn @click="dialog = true" variant="outlined" class="ma-2"
+                <v-btn to="feedbackpage" variant="outlined" class="ma-2"
                   style="font-size: clamp(0.625rem, -0.05rem + 1.2vw, 1rem);">Обратная связь</v-btn>
 
               </div>
