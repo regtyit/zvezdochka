@@ -1,6 +1,6 @@
 <script setup>
 import { useDisplay } from 'vuetify'
-import logo from '~/public/long_logo.png'
+import logo from '~/assets/images/long_logo.svg'
 const { mdAndDown } = useDisplay()
 let drawer = ref(false)
 useHead({
@@ -21,7 +21,7 @@ useHead({
 
                         <div>
                             <NuxtLink to="/">
-                                <v-img cover :src="logo" width="180">
+                                <v-img cover :src="logo" width="190">
                                     <template v-slot:placeholder>
                                         <v-row class="fill-height ma-0" align="center" justify="center">
                                             <v-progress-circular indeterminate></v-progress-circular>
@@ -101,7 +101,7 @@ useHead({
 
                 <div style="width: 20%;" class="ma-4">
                     <NuxtLink to="/" @click="drawer = false">
-                        <v-img src="../assets/images/big_logo.png">
+                        <v-img src="../assets/images/big_logo.svg">
                             <template v-slot:placeholder>
                                 <v-row class="fill-height ma-0" align="center" justify="center">
                                     <v-progress-circular indeterminate></v-progress-circular>

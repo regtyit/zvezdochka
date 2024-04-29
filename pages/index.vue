@@ -101,11 +101,11 @@ onMounted(async () => {
 </script>
 
 <template>
-  <v-container >
+  <v-container>
     <ClientOnly>
       <v-row>
-        <v-col class="d-flex justify-center">
-          <v-btn color="alert " to="feedbackpage">Купить путевку</v-btn>      
+        <v-col class="d-flex justify-end justify-md-center">
+          <v-btn color="alert" to="feedbackpage">Купить путевку</v-btn>
         </v-col>
       </v-row>
       <v-row class="start-page">
@@ -144,9 +144,20 @@ onMounted(async () => {
             </div>
           </v-col>
           <v-col v-if="md" cols="6" sm="4" md="3" class="ma-0 pa-0">
-            <div class="tile logo2">
+            <div class="tile h-100">
 
-
+              <v-img src="../assets/images/big_logo.svg" width="150px" >
+                        <template v-slot:placeholder>
+                            <v-row class="fill-height ma-0" align="center" justify="center">
+                                <v-progress-circular indeterminate></v-progress-circular>
+                            </v-row>
+                        </template>
+                        <template v-slot:error>
+                            <v-row class="fill-height ma-0" align="center" justify="center">
+                                <span>Ошибка загрузки изображения</span>
+                            </v-row>
+                        </template>
+                    </v-img>
             </div>
           </v-col>
         </draggable>
@@ -255,14 +266,5 @@ onMounted(async () => {
 
 #img_8 {
   background-image: url(../assets/images/img_8.jpg);
-}
-
-
-.logo2 {
-  height: 100%;
-  background-image: url(../assets/images/logo2.png);
-  border: none;
-  background-size: cover;
-
 }
 </style>
