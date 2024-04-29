@@ -1,12 +1,13 @@
 <template>
     <v-container>
-        <BackButton/>
+
         <v-row>
             <v-col>
-                <h2 class="text-center">
+                <h2 class="text-center text-uppercase">
+                    <BackButton />
                     <div class="blue-dot"></div> Работа
                 </h2>
-                
+
             </v-col>
         </v-row>
     </v-container>

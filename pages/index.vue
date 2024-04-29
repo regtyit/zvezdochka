@@ -103,10 +103,14 @@ onMounted(async () => {
 <template>
   <v-container >
     <ClientOnly>
+      <v-row>
+        <v-col class="d-flex justify-center">
+          <v-btn color="alert " to="feedbackpage">Купить путевку</v-btn>      
+        </v-col>
+      </v-row>
       <v-row class="start-page">
 
         <draggable class="d-flex flex-wrap" :disabled="mdAndDown">
-
           <v-col v-for="tile, index in tiles" :key="index" class="ma-0 pa-0 " cols="6" sm="4" md="3">
             <div class="tile" :id="tile.tileId">
               <div v-if="tile.topSubMenu" class="top-sub-menu">

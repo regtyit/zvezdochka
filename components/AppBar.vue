@@ -36,9 +36,9 @@ useHead({
                             </NuxtLink>
 
                         </div>
-                        <div v-if="!mdAndDown" class="d-flex justify-center w-100 font-weight-bold">
+                        <div v-if="!mdAndDown" class="d-flex justify-center w-100 text-uppercase text-subtitle-1">
 
-                            <div class="ma-2" on-touchcancel="">
+                            <div class="ma-2">
                                 <NuxtLink to="/about/description">О лагере</NuxtLink>
                             </div>
                             <div class="ma-2">
@@ -74,6 +74,9 @@ useHead({
         <v-navigation-drawer v-model="drawer" temporary class="w-100" location="right">
             <div class="d-flex flex-column align-center text-uppercase pa-4 font-weight-bold">
                 <div class="ma-2">
+                    <NuxtLink to="/">Главная</NuxtLink>
+                </div>
+                <div class="ma-2">
                     <NuxtLink to="/about/description">О лагере</NuxtLink>
                 </div>
                 <div class="ma-2">
@@ -97,19 +100,22 @@ useHead({
 
 
                 <div style="width: 20%;" class="ma-4">
-                    <v-img src="../assets/images/big_logo.png">
-                        <template v-slot:placeholder>
-                            <v-row class="fill-height ma-0" align="center" justify="center">
-                                <v-progress-circular indeterminate></v-progress-circular>
-                            </v-row>
-                        </template>
-                        <template v-slot:error>
-                            <v-row class="fill-height ma-0" align="center" justify="center">
-                                <span>Ошибка загрузки изображения</span>
-                            </v-row>
-                        </template>
-                    </v-img>
+                    <NuxtLink to="/" @click="drawer = false">
+                        <v-img src="../assets/images/big_logo.png">
+                            <template v-slot:placeholder>
+                                <v-row class="fill-height ma-0" align="center" justify="center">
+                                    <v-progress-circular indeterminate></v-progress-circular>
+                                </v-row>
+                            </template>
+                            <template v-slot:error>
+                                <v-row class="fill-height ma-0" align="center" justify="center">
+                                    <span>Ошибка загрузки изображения</span>
+                                </v-row>
+                            </template>
+                        </v-img>
+                    </NuxtLink>
                 </div>
+
                 <div> <a href="tel:+7 (912) 856-55-69"> <span class="mdi mdi-cellphone-sound"></span> 7(912)856 55 69
                     </a>
                     <br>

@@ -45,7 +45,7 @@ let infoCards = ref([
 
             <v-col cols="12" md="8">
                 <v-card class=" d-flex justify-center  align-center h-100"  elevation="8" >
-                <v-img class="rounded-md" elevation="8" src="../../public/aria/6.jpg" aspect-ratio="2.5" cover>
+                <v-img class="rounded-md" elevation="8" src="/public/aria/6.jpg" aspect-ratio="2.5" cover>
                     <template v-slot:placeholder>
                         <v-row class="fill-height ma-0" align="center" justify="center">
                             <v-progress-circular indeterminate></v-progress-circular>
@@ -61,7 +61,7 @@ let infoCards = ref([
                 <!-- <div class="main-img"></div> -->
             </v-col>
             <v-col class="d-none d-md-block " cols="12" md="4">
-                <div class=" d-flex justify-center  align-center h-100"  >
+                <v-card class=" d-flex justify-center  align-center h-100" color="white" elevation="8" >
 
                     <v-img src="../../assets/images/big_logo.png" max-height="250" >
                         <template v-slot:placeholder>
@@ -75,7 +75,7 @@ let infoCards = ref([
                             </v-row>
                         </template>
                     </v-img>
-                </div>
+                </v-card>
 
 
                 <!-- <div class="main-img"></div> -->

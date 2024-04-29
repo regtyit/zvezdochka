@@ -82,11 +82,21 @@ let photos = ref(
 <template>
     <v-container>
         <v-row>
-                <v-col v-for="photo, index in photos" :key="index" class="d-flex child-flex pa-1"
-                    :cols="activeImg(index)" @click="scale(index)">
-                    <v-img :src="photo.url" aspect-ratio="3/2" cover class="rounded-lg">
-                    </v-img>
-                </v-col>   
+            <v-col v-for="photo, index in photos" :key="index" class="d-flex child-flex pa-1" :cols="activeImg(index)"
+                @click="scale(index)">
+                <v-img :src="photo.url" aspect-ratio="3/2" cover class="rounded-lg">
+                    <template v-slot:placeholder>
+                        <v-row class="fill-height ma-0" align="center" justify="center">
+                            <v-progress-circular indeterminate></v-progress-circular>
+                        </v-row>
+                    </template>
+                    <template v-slot:error>
+                        <v-row class="fill-height ma-0" align="center" justify="center">
+                            <span>Ошибка загрузки изображения</span>
+                        </v-row>
+                    </template>
+                </v-img>
+            </v-col>
         </v-row>
     </v-container>
 </template>

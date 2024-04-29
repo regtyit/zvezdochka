@@ -43,7 +43,7 @@
                 <v-carousel :show-arrows="false" height="50dvh"  cycle interval="4000">
                     <v-carousel-item v-for="item in 8" :src="`/disco/${item}.jpeg`" cover></v-carousel-item>
 
-                </v-carousel>◊
+                </v-carousel>
              
             </v-col>
         </v-row>
