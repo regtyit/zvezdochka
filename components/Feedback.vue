@@ -1,11 +1,6 @@
 <script setup>
 
-onMounted(() => {
-  const script = document.createElement('script');
-  script.src = "https://forms.yandex.ru/_static/embed.js";
-  document.body.appendChild(script);
 
-});
 </script>
 <template>
 

@@ -105,7 +105,7 @@ onMounted(async () => {
     <ClientOnly>
       <v-row>
         <v-col class="d-flex justify-end justify-md-center">
-          <v-btn color="alert" to="feedbackpage">Купить путевку</v-btn>
+          <v-btn color="alert" to="/reservationpage">Купить путевку</v-btn>
         </v-col>
       </v-row>
       <v-row class="start-page">

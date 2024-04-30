@@ -1,6 +1,6 @@
 <script setup>
 import { useDisplay } from 'vuetify'
-import logo from '~/assets/images/long_logo.svg'
+import logo from '~/assets/images/long_logo.png'
 const { mdAndDown } = useDisplay()
 let drawer = ref(false)
 useHead({
@@ -74,32 +74,39 @@ useHead({
         <v-navigation-drawer v-model="drawer" temporary class="w-100" location="right">
             <div class="d-flex flex-column align-center text-uppercase pa-4 font-weight-bold">
                 <div class="ma-2">
-                    <NuxtLink to="/">Главная</NuxtLink>
+                    <NuxtLink @click.stop="drawer = !drawer" to="/">Главная</NuxtLink>
                 </div>
                 <div class="ma-2">
-                    <NuxtLink to="/about/description">О лагере</NuxtLink>
+                    <NuxtLink @click.stop="drawer = !drawer" to="/about/description">О лагере</NuxtLink>
                 </div>
                 <div class="ma-2">
-                    <NuxtLink to="/pass">Путевки</NuxtLink>
+                    <NuxtLink @click.stop="drawer = !drawer" to="/pass">Путевки</NuxtLink>
                 </div>
                 <div class="ma-2">
-                    <NuxtLink to="/news">Новости</NuxtLink>
+                    <NuxtLink @click.stop="drawer = !drawer" to="/news">Новости</NuxtLink>
                 </div>
                 <div class="ma-2">
-                    <NuxtLink to="/toparents/takewith">Родителям</NuxtLink>
+                    <NuxtLink @click.stop="drawer = !drawer" to="/toparents/takewith">Родителям</NuxtLink>
                 </div>
                 <div class="ma-2">
-                    <NuxtLink to="/additionalservice">Доп. услуги</NuxtLink>
+                    <NuxtLink @click.stop="drawer = !drawer" to="/additionalservice">Доп. услуги</NuxtLink>
                 </div>
                 <div class="ma-2">
-                    <NuxtLink to="/job">Работа</NuxtLink>
+                    <NuxtLink @click.stop="drawer = !drawer" to="/job">Работа</NuxtLink>
                 </div>
                 <div class="ma-2">
-                    <NuxtLink to="/contacts">Контакты</NuxtLink>
+                    <NuxtLink @click.stop="drawer = !drawer" to="/contacts">Контакты</NuxtLink>
+                </div>
+                <v-btn to="feedbackpage" variant="outlined" class="ma-2"
+                    style="font-size: clamp(0.625rem, -0.05rem + 1.2vw, 1rem);">Обратная связь</v-btn>
+                <div>
+                    <a href="https://vk.com/public204964757" target="_blank"><img class="ma-2"
+                            src="../assets/icons/vk_color.svg" alt=""></a>
+                    <a href="https://ok.ru/group/70000001824558" target="_blank"><img class="ma-2"
+                            src="../assets/icons/odn_color.svg" alt=""></a>
                 </div>
 
-
-                <div style="width: 20%;" class="ma-4">
+                <!-- <div style="width: 20%;" class="ma-4">
                     <NuxtLink to="/" @click="drawer = false">
                         <v-img src="../assets/images/big_logo.svg">
                             <template v-slot:placeholder>
@@ -114,7 +121,7 @@ useHead({
                             </template>
                         </v-img>
                     </NuxtLink>
-                </div>
+                </div> -->
 
                 <div> <a href="tel:+7 (912) 856-55-69"> <span class="mdi mdi-cellphone-sound"></span> 7(912)856 55 69
                     </a>

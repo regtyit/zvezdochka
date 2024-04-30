@@ -55,22 +55,22 @@ let passes = ref([
                     <v-timeline align="center">
                         <v-timeline-item v-for="(pass, i) in passes" :key="i" :dot-color="pass.color" size="small">
                             <template v-slot:opposite>
-                                <h3 :class="`text-center font-weight-bold text-${pass.color}`" v-text="pass.time">
-                                </h3>
+                                <h4 :class="`text-center font-weight-bold text-${pass.color}`" v-text="pass.time">
+                                </h4>
                             </template>
                             <div>
-                                <h2 :class="`text-center  font-weight-bold mb-4 text-${pass.color}`">
+                                <h3 :class="`text-center  font-weight-bold mb-4 text-${pass.color}`">
                                     {{ pass.name }}
-                                </h2>
-                                <h2 :class="`text-center  font-weight-bold mb-4 text-${pass.color}`">
+                                </h3>
+                                <h3 :class="`text-center  font-weight-bold mb-4 text-${pass.color}`">
                                     {{ pass.price }}
-                                </h2>
+                                </h3>
                             </div>
                         </v-timeline-item>
                     </v-timeline>
                 </v-col>
                 <v-col cols="12" md="6" class="d-flex justify-center align-center order-first order-md-1">
-                    <v-btn color="alert" to="/feedbackpage" >Купить путевку</v-btn>
+                    <v-btn color="alert" to="/reservationpage" >Купить путевку</v-btn>
                 </v-col>
             </v-row>
         </ClientOnly>
