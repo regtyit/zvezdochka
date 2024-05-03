@@ -2,7 +2,7 @@
     <v-footer class="footer" height="100px">
         <v-divider width="350px" class="ma-2"></v-divider>
         <div class="d-flex justify-center">
-            <NuxtLink to="/permissions">
+            <NuxtLink to="/certificates">
                 <div class="ma-2">Документы</div>
             </NuxtLink>
             <NuxtLink to="/contacts">

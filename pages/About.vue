@@ -3,7 +3,7 @@
 let toggle_menu = ref(
     [
         {
-            name: 'Про лагерь',
+            name: 'О лагере',
             route: '/about/description'
         },
         {

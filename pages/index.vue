@@ -111,7 +111,7 @@ onMounted(async () => {
       <v-row class="start-page">
 
         <draggable class="d-flex flex-wrap" :disabled="mdAndDown">
-          <v-col v-for="tile, index in tiles" :key="index" class="ma-0 pa-0 " cols="6" sm="4" md="3">
+          <v-col v-for="tile, index in tiles" :key="index" class="ma-0 pa-0 overflow-hidden " cols="6" sm="4" md="3">
             <div class="tile" :id="tile.tileId">
               <div v-if="tile.topSubMenu" class="top-sub-menu">
                 <a href="https://vk.com/public204964757" target="_blank"><img class="ma-2" src="../assets/icons/vk.svg"
